@@ -275,7 +275,7 @@
     
         <section >
             
-            <h2><a id="user-content-micropython--smart-home" class="anchor" href="#micropython--smart-home" aria-hidden="true"></a>MicroPython &amp; Smart Home</h2>
+            <h2><a id="user-content-smarthome-economy-ft-micropython-on-esp8266" class="anchor" href="#smarthome-economy-ft-micropython-on-esp8266" aria-hidden="true"></a>SmartHome economy ft. MicroPython on ESP8266</h2>
 <p><img src="static/micropython.svg" alt="" width="50%"></p>
 <aside class="notes"> Chciałbym wam opowiedzieć o mojej przygodzie z Micropythonem i smart domem</aside>
 
@@ -353,8 +353,9 @@ Można by się spierać i znaleźć inne lepsze, ale nie o tym jest ta przezntac
         
             <section >
                 <h3><a id="user-content-blynkio" class="anchor" href="#blynkio" aria-hidden="true"></a><a href="https://blynk.io">BLYNK.IO</a></h3>
-<p>We make Internet of Things <strong class="fragment highlight-green">simple</strong></p>
+<p>We make Internet of Things <strong>simple</strong></p>
 <p><img src="static/blynk.png" alt="" width="50%"></p>
+<aside class="notes"> widgety za pkty, pkty za kase (startowe darmowe pkty wystarczaja), eksport do aplikacji</aside>
 
             </section>
         
@@ -381,12 +382,11 @@ neopixel = NeoPixel(neopin,1 )
 
 @blynk.handle_event(&quot;write V13&quot;)
 def handler_neopixel(pin, values):
-    assert len(values) == 3
     values = [int(val) for val in values]
-    
     neopixel[0] = [values[1], values[0], values[2]]
     neopixel.write()
 </code></pre>
+<aside class="notes"> neopixel - max dlugosc?</aside>
 
             </section>
         
@@ -397,12 +397,21 @@ def handler_neopixel(pin, values):
 
 
     
+    <section>
         <section >
-            
             <h1><a id="user-content-sonoff" class="anchor" href="#sonoff" aria-hidden="true"></a>SONOFF</h1>
 <p><img src="static/sonoff.png" alt="" width="50%"></p>
 
             </section>
+        
+            <section >
+                <p>TODO: dodac zdjecie środka modułu</p>
+<aside class="notes"> DEMO</aside>
+
+            </section>
+        
+
+    </section>
     
 
 

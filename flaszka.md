@@ -4,7 +4,7 @@ highlightTheme: Railscasts
 
 ---
 
-## MicroPython & Smart Home
+## SmartHome economy ft. MicroPython on ESP8266
 ![](static/micropython.svg){ width=50% }
 
 note: Chciałbym wam opowiedzieć o mojej przygodzie z Micropythonem i smart domem
@@ -68,9 +68,11 @@ Można by się spierać i znaleźć inne lepsze, ale nie o tym jest ta przezntac
 
 ### [BLYNK.IO](https://blynk.io)
 
- We make Internet of Things **simple**{.fragment .highlight-green}
+ We make Internet of Things **simple**
 
 ![](static/blynk.png){ width=50% }
+
+note: widgety za pkty, pkty za kase (startowe darmowe pkty wystarczaja), eksport do aplikacji
 
 --
 
@@ -97,14 +99,22 @@ neopixel = NeoPixel(neopin,1 )
 
 @blynk.handle_event("write V13")
 def handler_neopixel(pin, values):
-    assert len(values) == 3
     values = [int(val) for val in values]
-    
     neopixel[0] = [values[1], values[0], values[2]]
     neopixel.write()
 ```
+
+note: neopixel - max dlugosc?
 
 ---
 
 # SONOFF
 ![](static/sonoff.png){ width=50% }
+
+
+--
+
+
+TODO: dodac zdjecie środka modułu
+
+note: DEMO
