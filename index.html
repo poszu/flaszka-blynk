@@ -96,7 +96,7 @@
 
   <!-- Theme used for syntax highlighting of code -->
   
-  <link rel="stylesheet" href="libs/highlight.js/9.12.0/Railscasts.css">
+  <link rel="stylesheet" href="libs/highlight.js/9.12.0/agate.css">
   
 
   
@@ -276,8 +276,9 @@
         <section >
             
             <h2><a id="user-content-smarthome-economy-ft-micropython-on-esp8266" class="anchor" href="#smarthome-economy-ft-micropython-on-esp8266" aria-hidden="true"></a>SmartHome economy ft. MicroPython on ESP8266</h2>
-<p><img src="static/micropython.svg" alt="" width="50%"></p>
-<aside class="notes"> Chciałbym wam opowiedzieć o mojej przygodzie z Micropythonem i smart domem</aside>
+<p><img src="static/micropython.svg" alt="" width="45%" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes"> Chciałbym wam opowiedzieć o mojej przygodzie z Micropythonem i smart domem
+Pokazać, że można to zrobić tanio i przy okazji samemu, co daje satysfakcję.</aside>
 
             </section>
     
@@ -288,8 +289,10 @@
         <section >
             
             <h2><a id="user-content-problem-statement" class="anchor" href="#problem-statement" aria-hidden="true"></a>Problem statement</h2>
-<p><img src="static/lampa.jpg" alt="" width="50%"></p>
-<aside class="notes"> Skąd wziął się pomysł na to co chcę pokazać</aside>
+<p><img src="static/lampa.jpg" alt="" width="40%" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes"> Skąd wziął się pomysł na to co chcę pokazać <br>
+To jest lampa u mnie w salonie, włącznik na kablu gdzieś TAM za piecem<br>
+Fajnie by było móc włączyć swiatło bez schylania się, np telefonem</aside>
 
             </section>
     
@@ -300,8 +303,26 @@
         <section >
             
             <h4><a id="user-content-ktoś-już-rozwiązał-ten-problem" class="anchor" href="#ktoś-już-rozwiązał-ten-problem" aria-hidden="true"></a>Ktoś już rozwiązał ten problem…</h4>
-<p><img src="static/hue.jpeg" alt="" width="75%"></p>
-<aside class="notes"> Ale wzięcie gotowca było by za proste i bez funu :)</aside>
+<p><img src="static/hue.jpg" alt="" width="75%" style="background:none; border:none; box-shadow:none;"></p>
+<table>
+<thead>
+<tr></tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><img src="static/sad_face.png" alt="" align="center" width="50%" style="background:none; border:none; box-shadow:none;"></td>
+<td style="text-align:left">budżet 50zł</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td style="text-align:right"><img src="static/sad_face.png" alt="" align="center" width="50%" style="background:none; border:none; box-shadow:none;"></td>
+<td style="text-align:left">no fun</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes"> Ofc jak to zazwyczaj bywa okazuje się, że ktoś już to zrobił<br>
+Ale wzięcie gotowca było by za proste i bez funu :)</aside>
 
             </section>
     
@@ -312,14 +333,14 @@
     <section>
         <section >
             <h2><a id="user-content-prototyp" class="anchor" href="#prototyp" aria-hidden="true"></a>Prototyp</h2>
-<p><img src="static/prototyp.jpg" alt="" width="75%"></p>
+<p><img src="static/prototyp.jpg" alt="" width="75%" style="background:none; border:none; box-shadow:none;"></p>
 <aside class="notes"> Prototyp, który powstał w kilka dni. Składa się z trzech, a w zasadzie dwóch elementów.</aside>
 
             </section>
         
             <section >
                 <h3><a id="user-content-nodemcu" class="anchor" href="#nodemcu" aria-hidden="true"></a>NodeMCU</h3>
-<p><img src="static/nodemcu.jpg" alt="" width="75%"></p>
+<p><img src="static/nodemcu.jpg" alt="" width="75%" style="background:none; border:none; box-shadow:none;"></p>
 <aside class="notes"> DevKit NodeMCU z popularnym chipem ESP8266. Przede wszystkim otrzymujemy built-in WiFi, a poza tym około 10 GPIO, PWM, SPI, I2C itp. Ma wbudowany bootloader, dzięki czemu nie potrzeba extra sprzętu do przepalania FW.</aside>
 
             </section>
@@ -333,60 +354,36 @@
         
             <section >
                 <p><img src="static/relay_circuit.png" alt="" width="75%"></p>
-<aside class="notes"> Prosty układ oparty o tranzystor NPN. Gdy na GPIO jest stan niski - na wejściu przekaźnika jest masa, co aktywuje przekaźnik. Gdy na GPIO jest 3.3V - na wejściu 5V, wyłączając go.</aside>
+<aside class="notes"> Prosty układ oparty o tranzystor NPN. Gdy na GPIO HIGH - na IN przekaźnika jest masa, co aktywuje przekaźnik. Gdy na GPIO LOW - na IN 5V, wyłączając go.
+nie jest rocket-since, ale przez to dodatkowa plytka, wiecej kabli</aside>
 
             </section>
         
             <section >
-                <h3><a id="user-content-micropython" class="anchor" href="#micropython" aria-hidden="true"></a>Micropython</h3>
-<p><img src="static/micropython.svg" alt="" width="50%"></p>
-<aside class="notes"> Czym jest micropython: w skrócie oszczędna implementacja Pythona 3 (subset) zoptymalizowana pod kątem uruchamiania na mikrokontrolerach (ale nie tylko - jest port linuksowy).
-Dlaczego zdecydowałem się na uPython? Bo lubię Pythona, jest szybki w prototypowaniu. W zasadzie byłem w stanie napisać i przetestować (chociaż nie dokońca) cały soft na PC a potem uruchomić na devkicie.
-Można by się spierać i znaleźć inne lepsze, ale nie o tym jest ta przezntacja :)</aside>
-
-            </section>
-        
-            <section >
-                <h1><a id="user-content-demo" class="anchor" href="#demo" aria-hidden="true"></a>Demo</h1>
-
-            </section>
-        
-            <section >
-                <h3><a id="user-content-blynkio" class="anchor" href="#blynkio" aria-hidden="true"></a><a href="https://blynk.io">BLYNK.IO</a></h3>
-<p>We make Internet of Things <strong>simple</strong></p>
-<p><img src="static/blynk.png" alt="" width="50%"></p>
-<aside class="notes"> widgety za pkty, pkty za kase (startowe darmowe pkty wystarczaja), eksport do aplikacji</aside>
-
-            </section>
-        
-            <section >
-                <h3><a id="user-content-kod-obsługi-przekaźnika" class="anchor" href="#kod-obsługi-przekaźnika" aria-hidden="true"></a>Kod obsługi przekaźnika</h3>
-<pre><code class="language-python">relay_pin = machine.Pin(12, machine.Pin.OUT)
-
-@blynk.handle_event(&quot;write V12&quot;)
-def set_relay(pin, values):
-    relay_pin.value(int(values[0]))
-
-@blynk.handle_event(&quot;read V12&quot;)
-def read_relay():
-    blynk.virtual_write(12, relay_pin.value)
-</code></pre>
-
-            </section>
-        
-            <section >
-                <h3><a id="user-content-kod-obsługi-diod-neopixel" class="anchor" href="#kod-obsługi-diod-neopixel" aria-hidden="true"></a>Kod obsługi diod NeoPixel</h3>
-<pre><code class="language-python">from neopixel import NeoPixel
-neopin = machine.Pin(13, machine.Pin.OUT)
-neopixel = NeoPixel(neopin,1 )
-
-@blynk.handle_event(&quot;write V13&quot;)
-def handler_neopixel(pin, values):
-    values = [int(val) for val in values]
-    neopixel[0] = [values[1], values[0], values[2]]
-    neopixel.write()
-</code></pre>
-<aside class="notes"> neopixel - max dlugosc?</aside>
+                <h3><a id="user-content-koszt" class="anchor" href="#koszt" aria-hidden="true"></a>koszt</h3>
+<table>
+<thead>
+<tr></tr>
+</thead>
+<tbody>
+<tr>
+<td>NodeMCU devkit</td>
+<td style="text-align:right">20 zł</td>
+</tr>
+<tr>
+<td>przekaźnik</td>
+<td style="text-align:right">4 zł</td>
+</tr>
+<tr>
+<td>tranzystor</td>
+<td style="text-align:right">1 zł</td>
+</tr>
+<tr>
+<td><strong>RAZEM</strong></td>
+<td style="text-align:right"><strong>25 zł</strong></td>
+</tr>
+</tbody>
+</table>
 
             </section>
         
@@ -399,19 +396,193 @@ def handler_neopixel(pin, values):
     
     <section>
         <section >
-            <h1><a id="user-content-sonoff" class="anchor" href="#sonoff" aria-hidden="true"></a>SONOFF</h1>
-<p><img src="static/sonoff.png" alt="" width="50%"></p>
+            <h1><a id="user-content-micropython" class="anchor" href="#micropython" aria-hidden="true"></a>Micropython</h1>
+<p><img src="static/micropython.svg" alt="" width="30%" style="background:none; border:none; box-shadow:none;"></p>
+<ul>
+<li>256kB ROM</li>
+<li>16kB RAM</li>
+</ul>
+<aside class="notes"> Czym jest micropython: w skrócie oszczędna implementacja Pythona 3 (subset) zoptymalizowana pod kątem uruchamiania na mikrokontrolerach (ale nie tylko - jest port linuksowy).<br>
+Dlaczego zdecydowałem się na uPython? Bo lubię Pythona, jest szybki w prototypowaniu. W zasadzie byłem w stanie napisać i przetestować (chociaż nie dokońca) cały soft na PC a potem uruchomić na devkicie.
+Można by się spierać i znaleźć inne lepsze, ale nie o tym jest ta prezentacja :)</aside>
 
             </section>
         
             <section >
-                <p>TODO: dodac zdjecie środka modułu</p>
-<aside class="notes"> DEMO</aside>
+                <h3><a id="user-content-features" class="anchor" href="#features" aria-hidden="true"></a>Features:</h3>
+<ul>
+<li>REPL --&gt; możliwość eksperymentowania</li>
+<li>WebREPL - REPL po websocket - bez kabla</li>
+<li>“baterie w zestawie” :)
+<ul>
+<li>HW (GPIO, PWM, I2C, SPI, etc.)</li>
+<li>network sockets</li>
+<li>JSON parsing</li>
+<li>i wiele innych…</li>
+</ul>
+</li>
+<li>C/C++ extensions</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h1><a id="user-content-demo" class="anchor" href="#demo" aria-hidden="true"></a>Demo</h1>
+<aside class="notes"> LED pin 14<br>
+w = network.WLAN(network.STA_IF)<br>
+w.ifconfig()<br>
+pokazac exception<br></aside>
 
             </section>
         
 
     </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h1><a id="user-content-blynkio" class="anchor" href="#blynkio" aria-hidden="true"></a><a href="https://blynk.io">BLYNK.IO</a></h1>
+<p>We make Internet of Things <strong>simple</strong></p>
+<p><img src="static/blynk.png" alt="" width="50%" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes"> platforma dla IOT, obsługa przez aplikacje<br>
+ciekawy model biznesowy: widgety za pkty, pkty za kase (startowe darmowe pkty wystarczaja)<br>
+gotowy projekt możemy sharowac (2 metody: link oraz eksport do niezaleznej aplikacji)</aside>
+
+            </section>
+        
+            <section >
+                <p><img src="static/blynk/add_dev1.jpg" alt="" width="40%" style="background:none; border:none; box-shadow:none;"></p>
+
+            </section>
+        
+            <section >
+                <p><img src="static/blynk/add_dev2.jpg" alt="" width="40%" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes"> Dajemy mu nazwę, na maila otrzymujemy token który posłuży do połączenia z serwerem.</aside>
+
+            </section>
+        
+            <section >
+                <p><img src="static/blynk/widget_list.jpg" alt="" width="100%" style="background:none; border:none; box-shadow:none;"></p>
+
+            </section>
+        
+            <section >
+                <p><img src="static/blynk/button_properties.jpg" alt="" width="40%" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes"> 256 wirtualnych<br>
+push - 1stanowy, switch - 2stanowy</aside>
+
+            </section>
+        
+            <section >
+                <p><img src="static/blynk/project.jpg" alt="" width="40%" style="background:none; border:none; box-shadow:none;"></p>
+
+            </section>
+        
+            <section >
+                <h3><a id="user-content-kod-obsługi-przekaźnika" class="anchor" href="#kod-obsługi-przekaźnika" aria-hidden="true"></a>Kod obsługi przekaźnika</h3>
+<pre><code class="language-python">relay_pin = machine.Pin(3, machine.Pin.OUT)
+blynk = blynklib.Blynk(BLYNK_AUTH)
+
+@blynk.handle_event(&quot;write V3&quot;)
+def write_relay(pin, values):
+    relay_pin.value(int(values[0]))
+
+@blynk.handle_event(&quot;read V3&quot;)
+def read_relay():
+    blynk.virtual_write(3, relay_pin.value)
+</code></pre>
+<!-- --
+
+### Kod obsługi diod NeoPixel
+
+```python
+from neopixel import NeoPixel
+neopin = machine.Pin(13, machine.Pin.OUT)
+neopixel = NeoPixel(neopin,1 )
+
+@blynk.handle_event("write V13")
+def handler_neopixel(pin, values):
+    values = [int(val) for val in values]
+    neopixel[0] = [values[1], values[0], values[2]]
+    neopixel.write()
+```
+
+note: neopixel - max dlugosc? -->
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2><a id="user-content-prototyp-1" class="anchor" href="#prototyp-1" aria-hidden="true"></a>Prototyp</h2>
+<p><img src="static/prototyp.jpg" alt="" width="75%" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes"> Wróćmy do prototypu.<br>
+230V / 5V. Niekoniecznie chciałbym trzymać coś takiego za kanapą 24h/dobę. Porażenie domowników / spalenie chałupy.<br>
+Dlatego postanowiłem poszukać sposobu na zamknięcie tego w obudowie…</aside>
+
+            </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h2><a id="user-content-sonoff" class="anchor" href="#sonoff" aria-hidden="true"></a>SONOFF</h2>
+<p><img src="static/sonoff.png" alt="" width="70%" style="background:none; border:none; box-shadow:none;"></p>
+<aside class="notes"> znowu okazało się, że ktoś był pierwszy.<br>
+W środku ten sam chip, przekaźnik, stabilizator U 230-&gt;3V<br>
+Z 1 strony zasilanie, z 2 - urzadzenie<br>
+Aplikacja eWeLink - button do wlaczania<br>
+Jednak nie tak super - app rząda praw do wszystkiego (nawet lokalizacja), chińskie servery<br>
+Ale są wyciągnięte linie potrzebne do programowania, jest bootloader. Trzeba tylko dolutować piny</aside>
+
+            </section>
+        
+            <section >
+                <h2><a id="user-content-koszt-1" class="anchor" href="#koszt-1" aria-hidden="true"></a>Koszt</h2>
+<table>
+<thead>
+<tr></tr>
+</thead>
+<tbody>
+<tr>
+<td>1-razowo USB - UART</td>
+<td style="text-align:right">10 zł</td>
+</tr>
+<tr>
+<td>sonoff basic</td>
+<td style="text-align:right">26 zł</td>
+</tr>
+</tbody>
+</table>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+        <section >
+            
+            <h1><a id="user-content-dzięki-za-uwagę" class="anchor" href="#dzięki-za-uwagę" aria-hidden="true"></a>Dzięki za uwagę</h1>
+<p><a href="https://github.com/poszu/blynk-sonoff">https://github.com/poszu/blynk-sonoff</a></p>
+<aside class="notes"> To co wam pokazałem to tylko początek możliwości tego co można zrobić łącząc ESP8266 i <a href="http://Blynk.io">Blynk.io</a>.<br>
+Mikrokontroler wspiera interfejsy tj. I2C/SPI/UART dzięki czemu pozwala na połączenie różnych czujników lub urządzeń wykonawczych a Blynk pozwala w łatwy sposób nimi zarządzać.<br>
+SONOFF ma w ofercie wiele urządzeń, większość z ESP</aside>
+
+            </section>
     
 
 
@@ -437,7 +608,7 @@ def handler_neopixel(pin, values):
         history: true,
         keyboard: true,
         overview: true,
-        center: true,
+        center: false,
         touch: true,
         loop: false,
         rtl: false,
