@@ -32,14 +32,16 @@ Fajnie by było móc włączyć swiatło bez schylania się, np telefonem
 ![](static/sad_face.png){ align=center width=50% style="background:none; border:none; box-shadow:none;" }  | no fun
 
 note: Ofc jak to zazwyczaj bywa okazuje się, że ktoś już to zrobił<br>
-Ale wzięcie gotowca było by za proste i bez funu :)
+Ale są dwa "ale"<br>
+1 - prawdopodobnie chciałbym to zastosować w wielu miejscach, więc warto ograniczyć koszta -
+2 - we wzięciu gotowca nie ma funu ani satysfakcji
 
 ---
 
 ## Prototyp
 ![](static/prototyp.jpg){ width=75% style="background:none; border:none; box-shadow:none;" }
 
-note: Prototyp, który powstał w kilka dni. Składa się z trzech, a w zasadzie dwóch elementów.
+note: Prototyp, który widzicie na zdjęciach powstał w kilka dni. Składa się z trzech, a w zasadzie dwóch elementów.
 
 --
 
@@ -82,7 +84,6 @@ tranzystor | 1 zł
 
 note: Czym jest micropython: w skrócie oszczędna implementacja Pythona 3 (subset) zoptymalizowana pod kątem uruchamiania na mikrokontrolerach (ale nie tylko - jest port linuksowy).<br>
 Dlaczego zdecydowałem się na uPython? Bo lubię Pythona, jest szybki w prototypowaniu. W zasadzie byłem w stanie napisać i przetestować (chociaż nie dokońca) cały soft na PC a potem uruchomić na devkicie.
-Można by się spierać i znaleźć inne lepsze, ale nie o tym jest ta prezentacja :)
 
 --
 
@@ -97,14 +98,17 @@ Można by się spierać i znaleźć inne lepsze, ale nie o tym jest ta prezentac
   - i wiele innych...
 - C/C++ extensions
 
+note: czego nie ma w corze: wielu modułów z standard liba, ale jest upip
+
 --
 
 # Demo
 
-note: LED pin 14<br>
+note: Każdy język ma swój hellowworld. W embedded - mruganie dioda<br>
+LED pin 14<br>
 w = network.WLAN(network.STA_IF)<br>
 w.ifconfig()<br>
-pokazac exception<br>
+pokazać upip install("functools")
 
 ---
 
@@ -117,6 +121,10 @@ We make Internet of Things **simple**
 note: platforma dla IOT, obsługa przez aplikacje<br>
 ciekawy model biznesowy: widgety za pkty, pkty za kase (startowe darmowe pkty wystarczaja)<br>
 gotowy projekt możemy sharowac (2 metody: link oraz eksport do niezaleznej aplikacji)
+
+--
+
+![](static/blynk/add_project.jpg){ width=40% style="background:none; border:none; box-shadow:none;" }
 
 --
 

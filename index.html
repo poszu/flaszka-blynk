@@ -322,7 +322,9 @@ Fajnie by było móc włączyć swiatło bez schylania się, np telefonem</aside
 </tbody>
 </table>
 <aside class="notes"> Ofc jak to zazwyczaj bywa okazuje się, że ktoś już to zrobił<br>
-Ale wzięcie gotowca było by za proste i bez funu :)</aside>
+Ale są dwa “ale”<br>
+1 - prawdopodobnie chciałbym to zastosować w wielu miejscach, więc warto ograniczyć koszta -
+2 - we wzięciu gotowca nie ma funu ani satysfakcji</aside>
 
             </section>
     
@@ -334,7 +336,7 @@ Ale wzięcie gotowca było by za proste i bez funu :)</aside>
         <section >
             <h2><a id="user-content-prototyp" class="anchor" href="#prototyp" aria-hidden="true"></a>Prototyp</h2>
 <p><img src="static/prototyp.jpg" alt="" width="75%" style="background:none; border:none; box-shadow:none;"></p>
-<aside class="notes"> Prototyp, który powstał w kilka dni. Składa się z trzech, a w zasadzie dwóch elementów.</aside>
+<aside class="notes"> Prototyp, który widzicie na zdjęciach powstał w kilka dni. Składa się z trzech, a w zasadzie dwóch elementów.</aside>
 
             </section>
         
@@ -403,8 +405,7 @@ nie jest rocket-since, ale przez to dodatkowa plytka, wiecej kabli</aside>
 <li>16kB RAM</li>
 </ul>
 <aside class="notes"> Czym jest micropython: w skrócie oszczędna implementacja Pythona 3 (subset) zoptymalizowana pod kątem uruchamiania na mikrokontrolerach (ale nie tylko - jest port linuksowy).<br>
-Dlaczego zdecydowałem się na uPython? Bo lubię Pythona, jest szybki w prototypowaniu. W zasadzie byłem w stanie napisać i przetestować (chociaż nie dokońca) cały soft na PC a potem uruchomić na devkicie.
-Można by się spierać i znaleźć inne lepsze, ale nie o tym jest ta prezentacja :)</aside>
+Dlaczego zdecydowałem się na uPython? Bo lubię Pythona, jest szybki w prototypowaniu. W zasadzie byłem w stanie napisać i przetestować (chociaż nie dokońca) cały soft na PC a potem uruchomić na devkicie.</aside>
 
             </section>
         
@@ -423,15 +424,17 @@ Można by się spierać i znaleźć inne lepsze, ale nie o tym jest ta prezentac
 </li>
 <li>C/C++ extensions</li>
 </ul>
+<aside class="notes"> czego nie ma w corze: wielu modułów z standard liba, ale jest upip</aside>
 
             </section>
         
             <section >
                 <h1><a id="user-content-demo" class="anchor" href="#demo" aria-hidden="true"></a>Demo</h1>
-<aside class="notes"> LED pin 14<br>
+<aside class="notes"> Każdy język ma swój hellowworld. W embedded - mruganie dioda<br>
+LED pin 14<br>
 w = network.WLAN(network.STA_IF)<br>
 w.ifconfig()<br>
-pokazac exception<br></aside>
+pokazać upip install(“functools”)</aside>
 
             </section>
         
@@ -450,6 +453,11 @@ pokazac exception<br></aside>
 <aside class="notes"> platforma dla IOT, obsługa przez aplikacje<br>
 ciekawy model biznesowy: widgety za pkty, pkty za kase (startowe darmowe pkty wystarczaja)<br>
 gotowy projekt możemy sharowac (2 metody: link oraz eksport do niezaleznej aplikacji)</aside>
+
+            </section>
+        
+            <section >
+                <p><img src="static/blynk/add_project.jpg" alt="" width="40%" style="background:none; border:none; box-shadow:none;"></p>
 
             </section>
         
