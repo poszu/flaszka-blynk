@@ -6,7 +6,9 @@ highlightTheme: "agate"
 ## SmartHome economy ft. MicroPython on ESP8266
 ![](static/micropython.svg){ width=45% style="background:none; border:none; box-shadow:none;" }
 
-note: Chciałbym wam opowiedzieć o mojej przygodzie z Micropythonem i smart domem
+note: W ostatnich latach smarthome/home automation stały się popularnymi tematami.<br>
+Pojawilo sie wiele rozwiazan, jednak bardzo kosztowne.<br>
+Chciałbym wam opowiedzieć o mojej przygodzie z Micropythonem i smart domem
 Pokazać, że można to zrobić tanio i przy okazji samemu, co daje satysfakcję.
 
 ---
@@ -167,24 +169,6 @@ def write_relay(pin, values):
 def read_relay():
     blynk.virtual_write(3, relay_pin.value)
 ```
-
-<!-- --
-
-### Kod obsługi diod NeoPixel
-
-```python
-from neopixel import NeoPixel
-neopin = machine.Pin(13, machine.Pin.OUT)
-neopixel = NeoPixel(neopin,1 )
-
-@blynk.handle_event("write V13")
-def handler_neopixel(pin, values):
-    values = [int(val) for val in values]
-    neopixel[0] = [values[1], values[0], values[2]]
-    neopixel.write()
-```
-
-note: neopixel - max dlugosc? -->
 
 ---
 

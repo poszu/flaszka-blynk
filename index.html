@@ -277,7 +277,9 @@
             
             <h2><a id="user-content-smarthome-economy-ft-micropython-on-esp8266" class="anchor" href="#smarthome-economy-ft-micropython-on-esp8266" aria-hidden="true"></a>SmartHome economy ft. MicroPython on ESP8266</h2>
 <p><img src="static/micropython.svg" alt="" width="45%" style="background:none; border:none; box-shadow:none;"></p>
-<aside class="notes"> Chciałbym wam opowiedzieć o mojej przygodzie z Micropythonem i smart domem
+<aside class="notes"> W ostatnich latach smarthome/home automation stały się popularnymi tematami.<br>
+Pojawilo sie wiele rozwiazan, jednak bardzo kosztowne.<br>
+Chciałbym wam opowiedzieć o mojej przygodzie z Micropythonem i smart domem
 Pokazać, że można to zrobić tanio i przy okazji samemu, co daje satysfakcję.</aside>
 
             </section>
@@ -502,23 +504,7 @@ def write_relay(pin, values):
 def read_relay():
     blynk.virtual_write(3, relay_pin.value)
 </code></pre>
-<!-- --
 
-### Kod obsługi diod NeoPixel
-
-```python
-from neopixel import NeoPixel
-neopin = machine.Pin(13, machine.Pin.OUT)
-neopixel = NeoPixel(neopin,1 )
-
-@blynk.handle_event("write V13")
-def handler_neopixel(pin, values):
-    values = [int(val) for val in values]
-    neopixel[0] = [values[1], values[0], values[2]]
-    neopixel.write()
-```
-
-note: neopixel - max dlugosc? -->
             </section>
         
 
@@ -616,7 +602,7 @@ SONOFF ma w ofercie wiele urządzeń, większość z ESP</aside>
         history: true,
         keyboard: true,
         overview: true,
-        center: false,
+        center: true,
         touch: true,
         loop: false,
         rtl: false,
